@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
-const mongoURI = "mongodb://127.0.0.1:27017/inotebook"
 
-
-const connectToMongo = async() =>{
-    await mongoose.connect(mongoURI)
-        console.log("Connected to mongoose");
+const connectToMongo = async () => {
+    try {
+        await mongoose.connect(process.env.MONGO_URI);
+        console.log("Connected to MongoDB Atlas");
+    } catch (error) {
+        console.error(error);
     }
-
+}
 
 module.exports = connectToMongo;
