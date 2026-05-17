@@ -45,6 +45,7 @@ const NoteState = (props) =>{
             }
         });
        const json =  await response.json();
+       await response.json();
        const newNotes = notes.filter((note) =>  {return note._id !== id} );
        setNotes(newNotes);
     }
@@ -61,6 +62,7 @@ const NoteState = (props) =>{
         });
         console.log(response);
         const json =  await response.json();
+        await response.json();
         let newNotes = JSON.parse(JSON.stringify(notes));
         console.log(json);
          for(let i=0;i<notes.length ; i++){
