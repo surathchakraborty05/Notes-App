@@ -8,7 +8,9 @@ const app = express()
 const port = process.env.PORT || 5000
 
 
-app.use(cors())
+app.use(cors({
+  origin: "https://notes-app-rrhj-ppvux5fv9-surathchakraborty05s-projects.vercel.app"
+}));
 app.use(express.json());
 
 //Available Routes
